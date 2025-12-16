@@ -33,7 +33,9 @@ export class CertificatesController {
 
   @Post()
   async createCertificate(@Body() certificate: CreateCertificateDto) {
-    await this.certificatesService.remove('123123');
+    // Note: In production, you might want to remove old/expired certificates here
+    // This is a template - remove this line or implement your cleanup logic
+    // await this.certificatesService.remove('OLD-CERT-CODE');
 
     try {
       return await this.certificatesService.create(
